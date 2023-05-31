@@ -1,26 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BattleShipApiInteraction
+﻿namespace BattleShipApiInteraction
 {
 
-    internal class ApiConnection
+    public class ApiConnection
     {
-        private string apiKey = "lprgi_api_key_2023";
-        private string apiURL = "https://apilprgi.natono.biz/api";
+        private string ApiKey = "lprgi_api_key_2023";
+        private string ApiURL = "https://api-lprgi.natono.biz/api/";
+        private HttpClient Client { get; }
 
 
-        public HttpClient GetHttpClient()
+        public ApiConnection()
+        {
+            Client = GetHttpClient();
+        }
+
+        private HttpClient GetHttpClient()
         {
             HttpClient client = new HttpClient();
 
-            client.BaseAddress = new Uri(apiURL);
-
+            client.BaseAddress = new Uri(ApiURL);
+            client.DefaultRequestHeaders.Add("x-functions-key", ApiKey);
             return client;
         }
 
+        public async Task<string> Request(string url)
+        {
+            HttpResponseMessage response = await Client.SendAsync(new HttpRequestMessage(HttpMethod.Get, url));
+            return await response.Content.ReadAsStringAsync();
+        }
     }
 }
