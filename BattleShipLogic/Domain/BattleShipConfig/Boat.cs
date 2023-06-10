@@ -10,9 +10,12 @@ namespace BattleShipLogic.Domain.BattleShipConfig
         [JsonProperty("nom")]
         internal string Name { get; set; }
 
-        public override string ToString()
-        {
-            return $"Size: {this.Size}, Name: {this.Name}";
-        }
+        internal int XPosition { get; set; }
+
+        internal int YPosition { get; set; }
+
+        internal char Direction { get; set; }
+
+        internal bool IsDefeated { get; set; } = false;
     }
 }

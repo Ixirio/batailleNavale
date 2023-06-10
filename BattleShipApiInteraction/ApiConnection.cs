@@ -3,22 +3,22 @@
 
     public class ApiConnection
     {
-        private string ApiKey = "lprgi_api_key_2023";
-        private string ApiURL = "https://api-lprgi.natono.biz/api/";
-        private HttpClient Client { get; }
+        private const string API_URL = "https://api-lprgi.natono.biz/api/";
+        private const string API_KEY = "lprgi_api_key_2023";
+        private HttpClient Client { get; set; }
 
 
         public ApiConnection()
         {
-            Client = GetHttpClient();
+            this.Client = GetHttpClient();
         }
 
         private HttpClient GetHttpClient()
         {
             HttpClient client = new HttpClient();
 
-            client.BaseAddress = new Uri(ApiURL);
-            client.DefaultRequestHeaders.Add("x-functions-key", ApiKey);
+            client.BaseAddress = new Uri(API_URL);
+            client.DefaultRequestHeaders.Add("x-functions-key", API_KEY);
             return client;
         }
 

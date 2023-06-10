@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleShipConsole", "BattleShipConsole\BattleShipConsole.csproj", "{EB29E7FD-6567-4AF2-B599-2AE9A45B443C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BattleShipConsole", "BattleShipConsole\BattleShipConsole.csproj", "{EB29E7FD-6567-4AF2-B599-2AE9A45B443C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleShipApiInteraction", "BattleShipApiInteraction\BattleShipApiInteraction.csproj", "{B2EBB6BA-78A9-4485-B763-0818284A790D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BattleShipApiInteraction", "BattleShipApiInteraction\BattleShipApiInteraction.csproj", "{B2EBB6BA-78A9-4485-B763-0818284A790D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleShipLogic", "BattleShipLogic\BattleShipLogic.csproj", "{5EA33880-ABC1-4DB6-9E0F-3C01BC1A5DF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BattleShipLogic", "BattleShipLogic\BattleShipLogic.csproj", "{5EA33880-ABC1-4DB6-9E0F-3C01BC1A5DF9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

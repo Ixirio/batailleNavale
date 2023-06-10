@@ -24,18 +24,40 @@ namespace BattleShipLogic
 
             Task.WaitAll(player1Task, player2Task);
 
-            string name = "";
             Console.WriteLine("Creating first player... What's your name ?");
-            name = Console.ReadLine()!;
-            Player1 = new Player(name, player1Task.Result);
+            this.Player1 = new Player(Console.ReadLine()!, player1Task.Result);
+            this.Player1.AskPlayerToPlaceBoats();
+
+            Console.Clear();
 
             Console.WriteLine("Creating second player... What's your name ?");
-            name = Console.ReadLine()!;
-            Player2 = new Player(name, player2Task.Result);
+            this.Player2 = new Player(Console.ReadLine()!, player2Task.Result);
+            this.Player2.AskPlayerToPlaceBoats();
 
-            Player1.AskPlayerToPlaceBoats();
-
+            this.Player1.Oponent = this.Player2;
+            this.Player2.Oponent = this.Player1;
         }
 
+        public void Play()
+        {
+            while (true)
+            {
+                this.Player1.AskPlayerToPlay();
+
+                if (this.Player2.HasPlayerLost())
+                {
+                    Console.WriteLine($"{this.Player1.Name} has won !");
+                    break;
+                }
+
+                this.Player2.AskPlayerToPlay();
+
+                if (this.Player1.HasPlayerLost())
+                {
+                    Console.WriteLine($"{this.Player2.Name} has won !");
+                    break;
+                }
+            }
+        }
     }
 }

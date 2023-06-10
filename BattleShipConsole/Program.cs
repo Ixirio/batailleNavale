@@ -9,6 +9,10 @@ namespace BattleShipConsole
             Game game = new Game();
 
             game.CreatePlayers();
+            game.Play();
+
+            Console.WriteLine("Press any key to exit...");
+            Console.ReadLine();
         }
     }
 }
