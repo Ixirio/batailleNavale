@@ -17,6 +17,9 @@ namespace BattleShipLogic
             ConfigRequester = new ConfigRequester();
         }
 
+        /// <summary>
+        /// Permet d'instancier les joueurs de la bataille navale
+        /// </summary>
         public void CreatePlayers()
         {
             Task<BattleShipGrid> player1Task = ConfigRequester.GetBattleShipGrid();
@@ -38,6 +41,9 @@ namespace BattleShipLogic
             this.Player2.Oponent = this.Player1;
         }
 
+        /// <summary>
+        /// Boucle principale, continue tant qu'aucun des deux joueurs n'a gagné
+        /// </summary>
         public void Play()
         {
             while (true)

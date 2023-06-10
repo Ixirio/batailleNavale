@@ -3,7 +3,11 @@ namespace BattleShipLogic.Services
 {
     internal class GridDrawer
     {
-        public GridDrawer Draw(char[,] grid)
+        /// <summary>
+        /// Déssine la grille passée en paramètre
+        /// </summary>
+        /// <param name="grid"></param>
+        public void Draw(char[,] grid)
         {
 
             Console.Write("  ");
@@ -26,8 +30,6 @@ namespace BattleShipLogic.Services
 
                 Console.WriteLine();
             }
-
-            return this;
         }
     }
 }

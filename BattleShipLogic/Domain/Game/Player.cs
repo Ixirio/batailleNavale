@@ -17,6 +17,9 @@ namespace BattleShipLogic.Domain.Game
             this.BattleShipGrid = battleShipGrid;
         }
 
+        /// <summary>
+        /// Demande au joueur de placer ses bateaux
+        /// </summary>
         public void AskPlayerToPlaceBoats()
         {
             Console.WriteLine($"{this.Name} it's time to place boats on the grid !");
@@ -24,6 +27,9 @@ namespace BattleShipLogic.Domain.Game
             this.BattleShipGrid.PlaceBoatsOnGrid();
         }
 
+        /// <summary>
+        /// Demande au joueur la cible a attaquer
+        /// </summary>
         public void AskPlayerToPlay()
         {
             this.BattleShipGrid.DrawGrids();
@@ -63,6 +69,12 @@ namespace BattleShipLogic.Domain.Game
             Console.ReadLine();
         }
 
+        /// <summary>
+        /// Attaque la grille de l'adversaire selon coordonnées
+        /// renvoie faux si c'est une case qui a déja été ciblée, sinon vrai
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
         public bool AttackOponent(int x, int y)
         {
             if (this.BattleShipGrid.ShootGrid[x, y] != BattleShipGrid.GRID_EMPTY_CHAR) return false;
@@ -82,6 +94,9 @@ namespace BattleShipLogic.Domain.Game
             }
         }
 
+        /// <summary>
+        /// Renvoie un booléen indiquant si le joueur a perdu ou non
+        /// </summary>
         public bool HasPlayerLost()
         {
             return this.BattleShipGrid.HasLost();

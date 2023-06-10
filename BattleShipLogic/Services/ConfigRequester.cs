@@ -14,6 +14,10 @@ namespace BattleShipLogic.Services
             Connection = new ApiConnection();
         }
 
+        /// <summary>
+        /// Requete l'api, convertie et retourne la configuration de la grille de bataille navale
+        /// </summary>
+        /// <returns></returns>
         public async Task<BattleShipGrid> GetBattleShipGrid()
         {
             string config = await Connection.Request("GetConfig");

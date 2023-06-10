@@ -13,6 +13,10 @@
             this.Client = GetHttpClient();
         }
 
+        /// <summary>
+        /// Récupère le client HTTP pour requeter l'api
+        /// </summary>
+        /// <returns></returns>
         private HttpClient GetHttpClient()
         {
             HttpClient client = new HttpClient();
@@ -22,6 +26,10 @@
             return client;
         }
 
+        /// <summary>
+        /// Effectue une requete sur l'url donnée et retourne la réponse
+        /// </summary>
+        /// <param name="url"></param>
         public async Task<string> Request(string url)
         {
             HttpResponseMessage response = await Client.SendAsync(new HttpRequestMessage(HttpMethod.Get, url));

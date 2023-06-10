@@ -54,13 +54,16 @@ namespace BattleShipLogic.Domain.BattleShipConfig
             }
         }
 
+        /// <summary>
+        /// Fait appel au gridDrawer pour déssiner la grille du joueur ainsi que la grille de tir
+        /// </summary>
         public void DrawGrids()
         {
             Console.Clear();
 
             this.GridDrawer.Draw(this.ShootGrid);
 
-            Console.WriteLine(new string('-', this.Grid.Length));
+            Console.WriteLine(new string('-', this.RowCount + 4));
 
             this.GridDrawer.Draw(this.Grid);
         }
